@@ -16,8 +16,8 @@ while (seleccion != 'si' && seleccion != 'no') {
 if (seleccion == 'si') {
     alert('Lista de productos');
     let listaProductos = productos.map(
-        (producto) => producto.nombre + ' ' + producto.precio + '$');
-    alert(listaProductos.join('-'));
+        (producto) => producto.nombre + `$` + producto.precio);
+    alert(listaProductos.join('\n'));
 } else if (seleccion == 'no');
 
 
@@ -25,12 +25,12 @@ while (seleccion != 'no') {
     let producto = prompt('Seleccione el producto');
     let precio = 0
 
-    if (producto == 'summer vibes' || producto == 'low desert') {
+    if (producto == 'Summer Vibes' || producto == 'Low Desert') {
         switch (producto) {
-            case 'summer vibes':
+            case 'Summer Vibes':
                 precio = 9200;
                 break;
-            case 'low desert':
+            case 'Low Desert':
                 precio = 10500;
                 break;
             default:
@@ -53,7 +53,7 @@ while (seleccion != 'no') {
     }
 }
 
-let total = carrito.reduce((acc,el) => acc + el.precio * el.cantidad,0);
+let total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
 alert(`el total de tu compra es $ ${total}`);
 
 
